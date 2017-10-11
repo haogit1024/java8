@@ -1,7 +1,7 @@
 package com.czh.publish;
 
 public class Apple {
-    private int weight;
+    private Integer weight;
     private String color;
     public Apple(){
         this.color = "default";
@@ -16,7 +16,7 @@ public class Apple {
         this.color = color;
     }
 
-    public int getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
@@ -34,5 +34,10 @@ public class Apple {
 
     public String test(){
         return "this is apple";
+    }
+
+    @Override
+    public String toString() {
+        return "weight = " + this.weight + " color = " + this.color;
     }
 }
