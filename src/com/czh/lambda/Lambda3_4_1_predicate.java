@@ -18,7 +18,7 @@ public class Lambda3_4_1_predicate {
         }
     }
 
-    public static<T> List<T> filter(List<T> list, Predicate<T> p){
+    private static<T> List<T> filter(List<T> list, Predicate<T> p){
         List<T> l = new ArrayList<>();
         for (T i : list) {
             if (p.test(i)) {

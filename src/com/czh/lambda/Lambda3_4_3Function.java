@@ -22,7 +22,7 @@ public class Lambda3_4_3Function {
         }
     }
 
-    public static<T,R> List<R> map(List<T> list, Function<T,R> f) {
+    private static<T,R> List<R> map(List<T> list, Function<T,R> f) {
         List<R> l = new ArrayList();
         for (T i : list) {
             l.add(f.apply(i));
