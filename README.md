@@ -15,5 +15,4 @@
 和清理）可以配合Lambda提高灵活性和可重用性。  
 * Lambda表达式所需要代表的类型称为目标类型。  
 * 方法引用让你重复使用现有的方法实现并直接传递它们。  
-* Comparator、 Predicate和Function等函数式接口都有几个可以用来结合Lambda表达
-式的默认方法。
+* Comparator、 Predicate和Function等函数式接口都有几个可以用来结合Lambda表达式的默认方法。
