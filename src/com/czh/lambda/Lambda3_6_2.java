@@ -16,6 +16,7 @@ import java.util.function.Supplier;
  */
 public class Lambda3_6_2 {
     public static void main(String[] args) {
+        //没有参数
         Supplier<Apple> s = new Supplier<Apple>() {
             @Override
             public Apple get() {
@@ -31,6 +32,7 @@ public class Lambda3_6_2 {
         System.out.println(s2.get().getColor());
         System.out.println("-----------------");
 
+        //有一个参数
         Function<Integer, Apple> f = new Function<Integer, Apple>() {
             @Override
             public Apple apply(Integer integer) {
@@ -46,6 +48,7 @@ public class Lambda3_6_2 {
         System.out.println(f2.apply(50).getWeight());
         System.out.println("-----------------");
 
+        //有两个参数
         BiFunction<Integer, String, Apple> bf = new BiFunction<Integer, String, Apple>() {
             @Override
             public Apple apply(Integer integer, String s) {
