@@ -9,7 +9,7 @@ import java.util.function.Function;
 
 import static java.util.Comparator.comparing;
 
-public class Lambda3_7 {
+public class Lambda3_7Sort {
     public static void main(String[] args) {
         List<Apple> list = new ArrayList<>();
         list.sort(new Comparator<Apple>() {
