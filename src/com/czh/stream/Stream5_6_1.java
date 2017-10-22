@@ -16,7 +16,7 @@ public class Stream5_6_1 {
         System.out.println(calories);
         System.out.println();
         IntStream intStream = menu.stream().mapToInt(Dish::getCalories);
-        Stream<Integer> stream = intStream.boxed();
+        Stream<Integer> stream = intStream.boxed();  //特化流转对象流
         stream.forEach(System.out::println);
         System.out.println();
 
