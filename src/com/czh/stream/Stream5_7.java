@@ -41,5 +41,12 @@ public class Stream5_7 {
         //生成斐波纳契元组序列前20个元素
         Stream<int[]> fibonacciArray = Stream.iterate(new int[]{0,1}, i -> new int[]{i[1], i[0] + i[1]}).limit(20);
         fibonacciArray.forEach(i -> System.out.println(i[0] + "  " + i[1]));
+        System.out.println("-------------");
+        //打印正常的斐波纳契数列
+        Stream<int[]> fibonacciArray1 = Stream.iterate(new int[]{0,1}, i -> new int[]{i[1], i[0] + i[1]}).limit(20);
+        fibonacciArray1.map(t -> t[0]).forEach(System.out::println);
+        System.out.println("----------------------------");
+        //generate
+        Stream.generate(Math::random).limit(5).forEach(System.out::println);
     }
 }

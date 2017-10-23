@@ -5,9 +5,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.BinaryOperator;
 
-public class Stream5_4_2MaxAndMin {
+public class Stream5_4reduce {
     public static void main(String[] args) {
         List<Integer> someNumbers = Arrays.asList(1, 2, 3, 4, 5);
+//        int sum =
 
         /**
          * 下面是演化步骤,内部类->lambda->使用Integer静态方法的lambda->使用方法的引用
