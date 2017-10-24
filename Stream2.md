@@ -31,7 +31,7 @@ __诸如map或filter等操作会从输入流中获取每一个元素，并在输
 呢？它应当返回最大的质数，但数学告诉我们它不存在）。我们把这些操作叫作有__状态操作__。  
 
 #### 中间操作和终端操作
-![Alt middle_terminal_status](/image/middle_terminal_status.PNG)  
+![Alt middle_terminal_status](image/middle_terminal_status.PNG)  
 
 #### reduce
 reduce接受两个参数：
