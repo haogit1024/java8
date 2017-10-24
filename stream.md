@@ -14,4 +14,4 @@ findFirst找到第一个元素在并行上限制更多。如果你不关心返�
 1. 一个初始值,这里是0;
 2. 一 个 BinaryOperator<T> 来 将 两 个 元 素 结 合 起 来 产 生 一 个 新 值  
 inaryOperator<T>继承自BiFunction<T, U, R>,BiFunction<T, U, R>有一个抽象方法: R apply(T t, U u); 接受T,U返回一个R  
-![Alt stream_reduce](/image/stream_reduce.png)  
+![Alt stream_reduce](image/stream_reduce.png)  

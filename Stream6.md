@@ -1,8 +1,8 @@
 ## 用流手机数据
 ### 收集器
 #### 收集器作用高级归约
-收集器归约过程  
-![Alt collector_flow](/image/collector_flow.PNG)  
+收集器归约过程
+![Alt collector_flow](image/collector_flow.PNG)  
 
 >一般来说，Collector会对元素应用一个转换函数（很多时候是不体现任何效果的恒等转换，
  例如toList），并将结果累积在一个数据结构中，从而产生这一过程的最终输出。例如，在前面
