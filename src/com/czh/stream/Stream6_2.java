@@ -49,6 +49,7 @@ public class Stream6_2 {
 
     //广义的归约和汇总
     private static void stream6_2_4(){
+        //1. 收集框架的灵活性：以不同的方法执行同样的操作
         List<Dish> menu = Dish.getMenu();
         int totalCalories1 = menu.stream().collect(Collectors.reducing(0, Dish::getCalories, (i, j) -> Integer.sum(i, j)));
         System.out.println("totalCalories1 = " + totalCalories1);
@@ -56,12 +57,16 @@ public class Stream6_2 {
         System.out.println("totalCalories2 = " + totalCalories2);
         Optional<Dish> mostCaloriesDish = menu.stream().reduce((d1, d2) -> d1.getCalories() > d2.getCalories() ? d1 : d2);
         System.out.println( "mostColoriesDish = " + mostCaloriesDish.get());
+        int totalCalories3 = menu.stream().mapToInt(Dish::getCalories).sum();
+        System.out.println("totalCalories3 = " + totalCalories3);
+        Optional<Integer> totalCaloriesOption = menu.stream().map(Dish::getCalories).reduce(Integer::sum);
+        int totalCalories4 = totalCaloriesOption.get();
+        System.out.println("totalCalories4 = " + totalCalories4);
     }
 
     private static void stream6_2_4Test(){
         Stream<Integer> stream = Arrays.asList(1, 2, 3, 4, 5, 6).stream();
         List<Integer> intList = stream.reduce(new ArrayList<Integer>(), (List<Integer> l, Integer i) -> {
-            System.out.println("i = " + i);
             l.add(i);
             return l;
         },(List<Integer> l1, List<Integer> l2) -> {
@@ -70,6 +75,8 @@ public class Stream6_2 {
 
             l1.addAll(l2);
             return l1; });
-
+        for (int i : intList) {
+            System.out.println("i = " + i);
+        }
     }
 }
