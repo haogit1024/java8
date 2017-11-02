@@ -5,6 +5,7 @@
 summingInt执行过程  
 ![Alt summingInt_flow](image/summingInt_flow.PNG)  
 
+
 #### 连接字符串
 joining工厂方法返回的收集器会把对流中每一个对象应用toString方法得到的所有字符串连接成一个字符串  
 请注意， joining在内部使用了StringBuilder来把生成的字符串逐个追加起来  
@@ -20,3 +21,29 @@ joining工厂方法返回的收集器会把对流中每一个对象应用toStrin
 
 简化前面使用reducing收集器的求和例子  
 ![Alt reducing_examples](image/reducing_examples.PNG)  
+
+>int totalCalories = menu.stream().collect(reducing(0, Dish::getCalories, (i, j) -> i + j));  
+
+reducing 方法创建的收集器
+它需要三个参数。
+* 第一个参数是归约操作的起始值,也是流中没有元素时的返回值,所以很显然对于数值
+和而言 0 是一个合适的值。
+* 第二个参数就是你在6.2.2节中使用的函数,将菜肴转换成一个表示其所含热量的 int 。
+* 第三个参数是一个 BinaryOperator ,将两个项目累积成一个同类型的值。这里它就是
+对两个 int 求和  
+
+>Optional<Dish> mostCalorieDish = menu.stream().collect(reducing((d1, d2) -> d1.getCalories() > d2.getCalories() ? d1 : d2));
+
+你可以把单参数 reducing 工厂方法创建的收集器看作三参数方法的特殊情况,它把流中的
+第一个项目作为起点,把恒等函数(即一个函数仅仅是返回其输入参数)作为一个转换函数
+
+#### 分组
+>Map<Dish.Type, List<Dish>> dishesByType = menu.stream().collect(groupingBy(Dish::getType));  
+
+这里,你给 groupingBy 方法传递了一个 Function (以方法引用的形式)
+,它提取了流中每
+一道 Dish 的 Dish.Type 。我们把这个 Function 叫作分类函数,因为它用来把流中的元素分成不
+同的组。如图6-4所示,分组操作的结果是一个 Map ,把分组函数返回的值作为映射的键,把流中
+所有具有这个分类值的项目的列表作为对应的映射值  
+![Alt groupingBy_flow](image/groupingby_flow.png)  
+
