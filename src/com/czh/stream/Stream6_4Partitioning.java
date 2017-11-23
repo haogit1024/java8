@@ -5,6 +5,7 @@ import com.czh.publish.Dish;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Stream6_4Partitioning {
     public static void main(String[] args) {
@@ -23,5 +24,15 @@ public class Stream6_4Partitioning {
         Map<Boolean, Map<Dish.Type, List<Dish>>> vegetarianDishesByType = menu.stream().
                 collect(Collectors.partitioningBy(Dish::isVegetarian, Collectors.groupingBy(Dish::getType)));
 
+    }
+
+    public static Map<Boolean, List<Integer>> primes(int n){
+        Map<Boolean, List<Integer>> isPrimesMap = IntStream.rangeClosed(2, n).boxed().collect(Collectors.partitioningBy(i -> isPrimes(i)));
+        return isPrimesMap;
+    }
+
+    private static boolean isPrimes(int candidate){
+        int candidateRoot = (int)Math.sqrt(candidate);
+        return IntStream.rangeClosed(2, candidateRoot).noneMatch(i -> candidateRoot % i == 0);
     }
 }
