@@ -10,6 +10,8 @@ import java.util.stream.Stream;
  * 给定两个数字列表,如何返回所有的数对呢?例如,给定列表[1, 2, 3]和列表[3, 4],应
  * 该返回[(1, 3), (1, 4), (2, 3), (2, 4), (3, 3), (3, 4)]。为简单起见,你可以用有两个元素的数组来代 15
  * 表数对。
+ * 使用flatMap方法的效果是，各个数组并不是分别映射成一个流，而是映射成流的内容。所
+ * 有使用map(Arrays::stream)时生成的单个流都被合并起来，即扁平化为一个流
  */
 public class Stream5_2_2 {
     public static void main(String[] args) {

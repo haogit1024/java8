@@ -37,3 +37,6 @@ __诸如map或filter等操作会从输入流中获取每一个元素，并在输
 reduce接受两个参数：
 * 一个初始值
 * 一个Lambda来把两个流元素结合起来并产生一个新值
+
+#### flatMap
+![Alt middle_terminal_status](image/Stream_flatMap.PNG)  
