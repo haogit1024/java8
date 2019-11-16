@@ -7,6 +7,7 @@ import java.util.function.Predicate;
 
 /**
  * java.util.function.Predicate<T> 接口定义了一个名叫 test 的抽象方法,它接受泛型T 对象,并返回一个 boolean
+ * 谓词：在数学上常常用来表示一个类似函数的东西，它接受一个参数，并返回一个true或false
  */
 public class Lambda3_4_1_predicate {
     public static void main(String[] args) {

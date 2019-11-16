@@ -10,7 +10,7 @@ import java.util.function.Function;
  */
 public class Lambda3_4_3Function {
     public static void main(String[] args) {
-        List<Integer> l = map(Arrays.asList("abc","chenzh","hello"), (String s) -> s.length());
+        List<Integer> l = map(Arrays.asList("abc","chenzh","hello"), s -> s.length());
         for (int i : l) {
             System.out.println(i);
         }
@@ -23,7 +23,7 @@ public class Lambda3_4_3Function {
     }
 
     private static<T,R> List<R> map(List<T> list, Function<T,R> f) {
-        List<R> l = new ArrayList();
+        List<R> l = new ArrayList<>();
         for (T i : list) {
             l.add(f.apply(i));
         }
