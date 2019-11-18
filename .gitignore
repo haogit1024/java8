@@ -1,4 +1,5 @@
 .idea
 out
+.vscode
 
 将删除 src/com/czh/static/
