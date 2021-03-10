@@ -15,6 +15,15 @@ import java.util.stream.Stream;
  */
 public class Stream5_2_2 {
     public static void main(String[] args) {
+        // demo1
+        String[] wordsArray = {"hello", "world"};
+        List<String> words = Arrays.asList(wordsArray);
+        Stream<String[]> s1 = words.stream().map(w -> w.split(""));
+        Stream<Stream<String>> s2 = s1.map(Arrays::stream);
+        // flatMap 将每个Arrays::stream生成的流连接起来，合并成一个流
+        // : 一言以蔽之， flatmap方法让你把一个流中的每个值都换成另一个流，然后把所有的流连接起来成为一个流。
+        Stream<String> s3 = s1.flatMap(Arrays::stream);
+        // demo2
         List<Integer> numbers1 = Arrays.asList(1, 2, 3);
         List<Integer> numbers2 = Arrays.asList(3, 4);
         //1.传统的方法是用连个循环迭代获得对数
