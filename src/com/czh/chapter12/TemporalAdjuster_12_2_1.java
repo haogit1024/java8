@@ -1,8 +1,7 @@
 package com.czh.chapter12;
 
 import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;
 import java.time.temporal.TemporalAdjusters;
 
 /**
@@ -11,9 +10,10 @@ import java.time.temporal.TemporalAdjusters;
  */
 public class TemporalAdjuster_12_2_1 {
     public static void main(String[] args) {
-        LocalDate date = LocalDate.now();
-        System.out.println(date);
-        System.out.println(date.with(TemporalAdjusters.nextOrSame(DayOfWeek.MONDAY)));
-        System.out.println(date.with(TemporalAdjusters.lastDayOfMonth()));
+        LocalDateTime localDateTime = LocalDateTime.now();
+        LocalDateTime monday = localDateTime.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));
+        LocalDateTime sunday = localDateTime.with(TemporalAdjusters.nextOrSame(DayOfWeek.SUNDAY));
+        System.out.println(monday);
+        System.out.println(sunday);
     }
 }
